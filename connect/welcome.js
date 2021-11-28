@@ -23,11 +23,11 @@ module.exports = async(Ardy, anj) => {
       try {
         var pic = await Ardy.getProfilePicture(anj.participants[0])
       } catch {
-        var pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+        var pic = 'https://images-ext-1.discordapp.net/external/zEOf_L2M0gnSXhi8wfvaV5LoPIK1MmX1i0fxGPL1dCI/https/i.pinimg.com/564x/dc/1e/73/dc1e7366e0233fc1a6585ea88138b9d8.jpg?width=547&height=701'
       }
       bufff = await getBuffer(pic)
       Ardy.sendMessage(anj.jid, bufff, MessageType.image, {caption: `Hai @${anj.participants[0].split("@")[0]}, selamat datang di ${groupName}`, contextInfo: {"mentionedJid": [anj.participants[0]]}})
-      console.log("Group Join In Gc "+groupName)
+      console.log("اهلا بك في نقابة"+groupName)
     }
   } else if (anj.action === "remove") {
     //console.log(anj)
@@ -39,7 +39,7 @@ module.exports = async(Ardy, anj) => {
       }
       bufff = await getBuffer(pic)
       Ardy.sendMessage(anj.jid, bufff, MessageType.image, {caption: `Sayonara @${anj.participants[0].split("@")[0]}`, contextInfo: {"mentionedJid": [anj.participants[0]]}})
-      console.log("Group Leave In Gc "+groupName)
+      console.log("وداعا شرفتنا في "+groupName)
     }
   }
 }
